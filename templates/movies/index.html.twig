@@ -1,12 +1,31 @@
 {% extends "base.html.twig" %}
 
-{% block title %} Movies {% endblock %}
+{% block title %} Movies for you! {% endblock %}
 
 {% block body %}
     <div class="container mt-2">
-        {#% for movie in movies %}
-            <li>{{ movie }}</li>
-        {% endfor %#}
-        <h2>Movies for you!</h2>
+        <h1 class="text-center text-light">Movies for you!</h2>
+            <div class="container mt-3 mb-3">
+                <div class="row">
+                    
+                    {% for movie in movies %}
+                        <div class="col-md-4 mt-2">
+                            <div class="card mb-2 border-0 rounded-0">
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    {{ movie.releaseYear }}
+                                </span>
+                                <img src="{{ movie.imagePath }}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ movie.title }}</h5>
+                                    <p class="card-text">Year: {{ movie.releaseYear }}</p>
+                                    <p class="card-text">{{ movie.description }}</p>
+                                    <a href="{{ path('movies') }}/{{ movie.id }}" class="btn btn-danger rounded-0">More Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
     </div>
 {% endblock %}

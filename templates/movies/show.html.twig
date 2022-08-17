@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Movies for you! {% endblock %}
+
+{% block body %}
+
+    <div class="container mt-2">
+        <h1 class="text-center text-light">{{ movie.title }}</h2>
+            <div class="container mt-3 mb-3">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card mb-2 border-0 rounded-0">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {{ movie.releaseYear }}
+                            </span>
+                            <img src="{{ asset(movie.imagePath) }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ movie.title }}</h5>
+                                <p class="card-text">Year: {{ movie.releaseYear }}</p>
+                                <p class="card-text">{{ movie.description }}</p>
+                                <a href="{{ path('movies') }}" class="btn btn-danger rounded-0">Back to listing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}

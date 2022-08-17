@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Movies for you! {% endblock %}
+
+{% block body %}
+
+    <div class="container mt-2">
+        <h1 class="text-center text-light">Create New Movie</h2>
+            <div class="container mt-3 mb-3">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 text-light">
+
+                       {{ form_start(form) }}
+                       {{ form_widget(form) }}
+                       <button class="btn btn-lg btn-light rounded-0 mt-3">Save Movie</button>
+                       {{ form_end(form) }}
+
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}
