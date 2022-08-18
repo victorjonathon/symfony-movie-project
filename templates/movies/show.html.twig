@@ -18,7 +18,12 @@
                                 <h5 class="card-title">{{ movie.title }}</h5>
                                 <p class="card-text">Year: {{ movie.releaseYear }}</p>
                                 <p class="card-text">{{ movie.description }}</p>
-                                <a href="{{ path('movies') }}" class="btn btn-danger rounded-0">Back to listing</a>
+                                <div class="d-flex justify-content-between">
+                                    <a href="edit/{{ movie.id }}" class="btn btn-danger rounded-0">Edit Movie</a>
+                                    <a href="{{ path('delete_movie', {id: movie.id})}}" onclick="return confirm('Are you sure to delete?')" class="btn btn-danger rounded-0">Delete Movie</a>
+                                    <a href="{{ path('movies') }}" class="btn btn-danger rounded-0">Back to listing</a>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>

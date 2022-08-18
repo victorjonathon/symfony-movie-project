@@ -41,7 +41,9 @@ class MovieFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control-lg mt-3 rounded-0'
                 ],
-                'label' => false
+                'label' => false,
+                'required' => false,
+                'mapped' => false
             ])
             //->add('actors')
         ;

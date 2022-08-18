@@ -19,7 +19,7 @@
                                     <h5 class="card-title">{{ movie.title }}</h5>
                                     <p class="card-text">Year: {{ movie.releaseYear }}</p>
                                     <p class="card-text">{{ movie.description }}</p>
-                                    <a href="{{ path('movies') }}/{{ movie.id }}" class="btn btn-danger rounded-0">More Details</a>
+                                    <a href="{{ path('show_movie', {id:movie.id}) }}" class="btn btn-danger rounded-0">More Details</a>
                                 </div>
                             </div>
                         </div>
