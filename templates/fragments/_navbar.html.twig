@@ -16,7 +16,11 @@
             <a class="nav-link " href="#">Terms&Conditions</a>
           </li>
         </ul>
-        <a href="{{ path('create_movie') }}" class="btn btn-danger">Add New Movie</a>
+        <a href="{{ app.user ? path('app_logout') : path('app_login') }}" class="btn btn-danger me-2"> {{ app.user ? 'Logout' : 'Login'}}</a>
+        {% if app.user %}
+          <a href="{{ path('create_movie') }}" class="btn btn-danger">Add New Movie</a>
+        {% endif %}
+        
       </div>
     </div>
 </nav>

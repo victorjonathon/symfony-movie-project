@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Movies for you! {% endblock %}
+
+{% block body %}
+
+    <div class="container mt-2">
+        <h1 class="text-center text-light">Register</h2>
+            <div class="container mt-3 mb-3">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6 text-light">
+
+                        {{ form_start(registrationForm) }}
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.plainPassword) }}
+                        {{ form_row(registrationForm.agreeTerms) }}
+                
+                        <button type="submit" class="btn btn-lg btn-light rounded-0 mt-3">Register</button>
+                        {{ form_end(registrationForm) }}
+
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}
